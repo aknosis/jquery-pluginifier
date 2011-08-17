@@ -33,6 +33,7 @@ var namespace = {
 		//private init method - This is called immediately after the constructor 
 		_init : function(){
 			//useful code here
+			return this; //This is very important if you want to call into your plugin after the initial setup
 		},
 		
 		//private method - We filter out method names that start with an underscore this won't work outside
