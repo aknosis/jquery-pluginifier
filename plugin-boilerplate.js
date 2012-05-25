@@ -3,7 +3,8 @@
  * 	|- Plugin Boilerplate Code
  * 
  * Copyright (c) 2011 Paul Giberson - http://aknosis.com
- * Licensed under WTFPL v2 see http://sam.zoy.org/wtfpl/
+ * Licensed under the MIT license.
+ * http://aknosis.mit-license.org/2011/
  */
 
 //This should be available somewhere, doesn't have to be here explicitly

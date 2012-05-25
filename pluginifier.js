@@ -2,7 +2,8 @@
  * jQuery Pluginifier - A jQuery Plugin Instantiator (Write Less, Do More)
  *  
  * Copyright (c) 2011 Paul Giberson - http://aknosis.com
- * Licensed under WTFPL v2 see http://sam.zoy.org/wtfpl/
+ * Licensed under the MIT license.
+ * http://aknosis.mit-license.org/2011/
  */
 
 //Wrap in a closure to secure $ for jQuery
