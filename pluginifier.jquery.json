@@ -1,0 +1,28 @@
+{
+	"name" : "pluginifier",
+	"version" : "1.0.0",
+	"title" : "jQuery Pluginifier",
+	"author" : {
+		"name" : "Paul Giberson",
+		"url" : "http://aknosis.com",
+		"email" : "aknosis@gmail.com"
+	},
+	"licenses" : [
+		{
+			"type":"MIT",
+			"url":"http://aknosis.mit-license.org/2011/"
+		}
+	],
+	"dependencies" : {
+		"jquery" : ">=1.2.3"
+	},
+	"description" : "Helps get your jQuery plugin off the ground and prevent you from having to rewrite redundant plugin setup code.",
+	"keywords" : [
+		"boilerplate",
+		"plugin",
+		"setup"
+	],
+	"homepage" : "https://github.com/aknosis/jquery-pluginifier",
+	"bugs" : "https://github.com/aknosis/jquery-pluginifier/issues",
+	"docs" : "http://aknosis.com/2011/05/11/jquery-pluginifier-jquery-plugin-instantiator-boilerplate/"
+}
