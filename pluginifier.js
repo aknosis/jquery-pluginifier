@@ -1,6 +1,6 @@
 /**
  * jQuery Pluginifier - A jQuery Plugin Instantiator (Write Less, Do More)
- *  
+ *
  * Copyright (c) 2011 Paul Giberson - http://aknosis.com
  * Licensed under the MIT license.
  * http://aknosis.mit-license.org/2011/
@@ -11,6 +11,10 @@
 
 	//name is the name of your plugin
 	$.pluginifier = function( name ) {
+
+		if ( $.fn[name] !== undefined ) {
+			throw 'plugin '+name+' already defined';
+		}
 
 		//Create the prototype function for the plugin
 		$.fn[name] = function( options ) {
