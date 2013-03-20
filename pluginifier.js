@@ -9,11 +9,21 @@
 //Wrap in a closure to secure $ for jQuery
 (function( $ ) {
 
-	//name is the name of your plugin
-	$.pluginifier = function( name ) {
+	/**
+	 * prototype - your plugin's prototype
+	 * [name] - if you do not provide a name for your plugin, the prototype must have a pluginifier property
+	 */
+	$.pluginifier = function( prototype , name ) {
+
+		if ( name === undefined ) {
+			if ( prototype.pluginifier === undefined ) {
+				throw 'Cannot register plugin: need a name or the pluginifier propterty set on the prototype';
+			}
+			name = prototype.pluginifier;
+		}
 
 		if ( $.fn[name] !== undefined ) {
-			throw 'plugin '+name+' already defined';
+			throw 'Cannot register plugin: plugin '+name+' already defined';
 		}
 
 		//Create the prototype function for the plugin
@@ -28,12 +38,8 @@
 				//Support chaining by returning this
 				return this.each( function() {
 
-					/*
-					 * Retrieve the instance from $.data() OR create the instance, _init() it, and store that instance in $.data()
-					 * Here your plugin is assumed to live in namespace.plugins.name
-					 * Look in the samples folder for a namespaced example
-					 */
-					var instance = $.data( this , name ) || $.data( this , name , new namespace.plugins[name]( this , options )._init() );
+					//Retrieve the instance from $.data() OR create the instance, _init() it, and store that instance in $.data()
+					var instance = $.data( this , name ) || $.data( this , name , new prototype( this , options )._init() );
 
 					//If the first arg is a string we assume you are calling a method inside the plugin instance
 					if( typeof options === "string" ){
